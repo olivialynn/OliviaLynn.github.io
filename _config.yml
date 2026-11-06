@@ -9,7 +9,7 @@ author:
 # Links used in the footer / homepage. Leave a value blank to hide that link.
 social:
   github: "https://github.com/olivialynn"
-  email: "olynn (at) andrew.cmu.edu"
+  # email: "olynn (at) andrew.cmu.edu"
 
 # Blog posts live under /blog/<post-title>/
 permalink: /blog/:title/
@@ -21,8 +21,8 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-feed:
-  path: /blog/feed.xml
+# feed:
+#   path: /blog/feed.xml
 
 exclude:
   - Gemfile
