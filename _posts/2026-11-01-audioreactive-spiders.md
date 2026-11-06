@@ -13,7 +13,7 @@ the past year) as well as return to inverse kinematics for procedural animation.
 
 
 [> Check out the page itself <](https://olivialynn.github.io/Audioreactive-Spider/)  
-*(I recommend playing your own music as well, somewhere close to your mic :))*
+*I recommend playing your own music as well, somewhere close to your mic :)*
 
 ![Audioreactive dancing spiders](/assets/2026-11-01/spiders.gif)
 
@@ -32,7 +32,7 @@ That said, there were a couple pain-points I'd like to improve next time I do so
 ## Roses
 *(The Positive - Successes, highlights, or things that went well.)*
 
-### Interaction:
+### 1. Interaction:
 Leaving the sliders exposed (inspired by great work I've seen in more traditional live-coding 
 shows) worked well to invite people to mess around with the parameters themselves. (Though, a couple 
 people came up to me to ask if they could play around with them--next time, I could stand 
@@ -47,7 +47,7 @@ speedrunning scenes. A love for the game as it is, and
 in its functional state coexists with the game in a dysfunctional, stretched-to-the-limit 
 state.)
 
-### Inverse Kinematics: 
+### 2. Inverse Kinematics: 
 I really liked the way the dancing turned out, and it aligns with 
 my own personal manifesto of "visuals should come second to the music (in any show/party 
 that is not explicitly visuals-forward, ofc)" and should clearly show responses to the music 
@@ -57,7 +57,7 @@ to push forward.
 
 ## Buds: 
 *(The Potential): Opportunities, new ideas, or upcoming things to look forward to.* 
-### FFT buckets: 
+### 3. FFT buckets: 
 My friend's modular synth rig was tuned a little lower than the techno 
 I was working/testing to. At times, the FFT to pick out the beat in real-time was 
 really struggling to work (and the music was clearly a dancable four-on-the-floor, so this 
@@ -66,7 +66,7 @@ define frequency ranges for each of the bass/mids/treble buckets that are used t
 find the most consistent beat (and maybe add an option of a fourth, sub-bass bucket). 
 This will need more testing and refining in the field, I think.
 
-### Dancing:
+### 4. Social Effects of Dancing:
 Having critters dancing on the screen made it a little bit easier for people 
 at a small house party start dancing a little, during the more high-energy parts of the 
 set, I think. Of course, I won't take full credit for that at all--but as someone who is 
@@ -76,7 +76,7 @@ juuuust me and two other humans dancing.
 
 ## Thorns:
 *(The Challenges): Difficulties, stressors, or things that did not go as planned.*
-### Live updating: 
+### 5. Live updating: 
 The build itself was a little tricky. Since it was ultimately created collabing/iterating for hours with Claude (my 
 personal rule is: I can only vibe-code a concept if I've already implemented it by hand 
 myself, and I'd worked through a basic algorithm for IK in Unity3D maybe 4 or 5 years ago), 
