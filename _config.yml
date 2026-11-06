@@ -1,0 +1,32 @@
+title: Olivia Lynn
+tagline: software engineer
+description: >-
+  Olivia Lynn — software engineer. Writing and notes.
+url: "https://olivialynn.github.io"
+author:
+  name: Olivia Lynn
+
+# Links used in the footer / homepage. Leave a value blank to hide that link.
+social:
+  github: "https://github.com/olivialynn"
+  email: "olynn at andrew dot cmu dot edu"
+
+# Blog posts live under /blog/<post-title>/
+permalink: /blog/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: /blog/feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .sass-cache
+  - .jekyll-cache

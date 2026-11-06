@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo title=false %}
+  {% feed_meta %}
+  <title>{% if page.url == "/" %}{{ site.title }} | Home{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --muted: #555555;
+      --accent: #1a0dff;        /* one loud accent — swap freely */
+      --rule: 3px;              /* brutalist rule weight */
+      --maxw: 42rem;
+      --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0a0a0a; --fg: #f2f2f2; --muted: #9a9a9a; --accent: #6f6bff;
+      }
+    }
+    :root[data-theme="dark"] { --bg: #0a0a0a; --fg: #f2f2f2; --muted: #9a9a9a; --accent: #6f6bff; }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--mono);
+      font-size: 1rem;
+      line-height: 1.6;
+      font-variant-ligatures: none;
+    }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.25rem; }
+
+    a { color: var(--fg); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+    a:hover { background: var(--fg); color: var(--bg); text-decoration: none; }
+
+    h1, h2, h3 { font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase; margin: 0; }
+
+    /* Section label, e.g. [ WRITING ] */
+    .label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .label::before { content: "["; margin-right: 0.4ch; }
+    .label::after  { content: "]"; margin-left: 0.4ch; }
+
+    /* Top bar — inner pages only */
+    .topbar { border-bottom: var(--rule) solid var(--fg); }
+    .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
+    .wordmark { font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; text-decoration: none; }
+    .wordmark:hover { background: var(--fg); color: var(--bg); }
+    .topbar nav { font-size: 0.85rem; }
+    .topbar nav a { text-transform: uppercase; }
+
+    main { padding-top: 2.5rem; padding-bottom: 1rem; }
+
+    img { max-width: 100%; height: auto; display: block; border: var(--rule) solid var(--fg); }
+    hr { border: none; border-top: var(--rule) solid var(--fg); margin: 2.5rem 0; }
+    blockquote { margin: 1.5rem 0; padding: 0.5rem 0 0.5rem 1rem; border-left: var(--rule) solid var(--fg); color: var(--muted); }
+    code { font-family: var(--mono); font-size: 0.9em; border: 1px solid var(--fg); padding: 0 0.3em; }
+    pre { border: var(--rule) solid var(--fg); padding: 1rem; overflow-x: auto; font-size: 0.85rem; line-height: 1.5; }
+    pre code { border: none; padding: 0; }
+
+    footer.site { margin-top: 4rem; border-top: var(--rule) solid var(--fg); }
+    footer.site .wrap { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: baseline; padding-top: 1.25rem; padding-bottom: 2.5rem; }
+    footer.site a { font-size: 0.85rem; text-transform: uppercase; }
+    footer.site .email { font-size: 0.85rem; color: var(--muted); }
+    footer.site .spacer { flex: 1 1 auto; }
+    footer.site .copy { font-size: 0.75rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  {% unless page.url == "/" %}
+  <header class="topbar">
+    <div class="wrap">
+      <a class="wordmark" href="{{ '/' | relative_url }}">Olivia Lynn</a>
+      <nav><a href="{{ '/blog/' | relative_url }}">Writing</a></nav>
+    </div>
+  </header>
+  {% endunless %}
+
+  <main>
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      {% if site.social.github %}<a href="{{ site.social.github }}">Github</a>{% endif %}
+      {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}">Linkedin</a>{% endif %}
+      {% if site.social.email %}{% if site.social.email contains "@" %}<a href="mailto:{{ site.social.email }}">Email</a>{% else %}<span class="email">{{ site.social.email }}</span>{% endif %}{% endif %}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <span class="spacer"></span>
+      <span class="copy">© {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
+    </div>
+  </footer>
+</body>
+</html>

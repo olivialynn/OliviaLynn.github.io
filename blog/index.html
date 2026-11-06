@@ -1,0 +1,32 @@
+---
+layout: default
+title: Writing
+---
+<h1 class="page-title">Writing</h1>
+
+{% if site.posts.size == 0 %}
+  <p class="muted">No posts yet.</p>
+{% else %}
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="item">
+    <div class="row">
+      <a class="title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    </div>
+    {% if post.description %}<p class="desc">{{ post.description }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<style>
+  .page-title { font-size: clamp(2.2rem, 8vw, 3rem); margin-bottom: 2rem; }
+  .post-list { list-style: none; margin: 0; padding: 0; border-top: var(--rule) solid var(--fg); }
+  .post-list .item { padding: 1rem 0; border-bottom: 1px solid var(--fg); }
+  .post-list .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .post-list .title { text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 1rem; }
+  .post-list .date { color: var(--muted); font-size: 0.8rem; white-space: nowrap; }
+  .post-list .desc { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; }
+  .muted { color: var(--muted); }
+</style>
